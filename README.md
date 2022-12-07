@@ -1,8 +1,6 @@
 # Steam Market Analysis
 
-**Note*: Our project contains massive scraping work with python and 3rd party software, which has asked for permission from Professor Ann, and we included all scraping codes in data ingestion and etl part (/data_ingest & /etl)**
-
-# Data Profiling
+## Data Profiling
 1. drop rows that have price=0 in general.csv and join it with leak.csv based on ids.(Using PySpark)
    1. Define a shape() function for checking the dataframe's shape
    ```python
@@ -274,7 +272,7 @@
         print("\n")
         ```
 
-# ETL codes
+## ETL codes
 1. Get all the game id, title, url, current price, current discount whose popularity > 500 on SteamPrice History.
    1. iterate through pages from 1 to 92 (because after 92 the game popularity is less than 500) and as a keyword in api: ```url = "https://steampricehistory.com/popular?page="```
    2. find all games on each page's game table and collect their information into a dataframe:
